@@ -1,0 +1,32 @@
+<div class="container" ng-init="vm.fileslist()">
+  <div class="row">
+      <div class="center-block blog-header text-center">
+        <h1 class="blog-title">Your Documents List</h1>
+        <p class="lead blog-description">
+          <h3>Hi, Your Total Documents :  <span class="badge badge-info"> {{vm.fileslist.length}} </span></h3>
+        </p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block blog-main ">
+      <h1 ng-show="!vm.fileslist">No Documents to List <a href="/fileupload">Click here to Upload</a></h1>
+
+      <div class="blog-post" ng-repeat="(key, value) in vm.fileslist">
+        <a href="#"><h2 class="blog-post-title">{{value.filename}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="#"><i class="fa fa-pencil-square-o"></i></a>
+          <!-- Bava - call the document delete fn from here  -->
+          <!-- <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a> -->
+          <a ><i class="fa fa-trash"></i></a>
+        </span>
+        <p class="blog-post-meta">
+          Uploaded Date : {{value.uploadDate |date:'medium'}}
+        </p>        
+        <div>File Name : {{value.filename}}</div>
+      </div>
+
+    </div>
+
+  </div>
+    
+</div>

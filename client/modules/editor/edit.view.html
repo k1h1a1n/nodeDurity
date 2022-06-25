@@ -1,0 +1,36 @@
+<div class="container" ng-init="vm.find()">
+    <div class="center-block editor-post">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3">
+                <h1>Edit Editor</h1>
+                {{vm.editor}}
+            </div>
+        </div>
+        <div class="row">
+            <form name="editorForm" class="editor-edit form-horizontal" role="form" data-ng-submit="vm.update(editorForm.$valid)" novalidate>
+                <div class="form-group" ng-class="{'has-warning': editorForm.title.$dirty && editorForm.title.$invalid, 'has-success': editorForm.title.$dirty && editorForm.title.$valid}">
+                    <label class="col-md-1 control-label">Title</label>
+                    <div class="col-md-9">                        
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.editor._id" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="editorForm.title.$error.required && editorForm.title.$dirty" class="help-block">Title is required</p>
+                        <p ng-show="editorForm.title.$error.minlength" class="help-block">Title must be at least 2 characters long</p>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-warning': editorForm.content.$dirty && editorForm.content.$invalid, 'has-success': editorForm.content.$dirty && editorForm.content.$valid}">
+                    <label for="content" class="col-md-1 control-label">Content</label>
+                    <div class="col-md-9">
+                        <textarea name="content" data-ng-model="vm.editor.data" id="content" cols="30" rows="10" placeholder="Content" class="form-control" ng-minlength="2" required></textarea>
+                        <p ng-show="editorForm.content.$error.required && editorForm.content.$dirty" class="help-block">Content is required</p>
+                        <p ng-show="editorForm.content.$error.minlength" class="help-block">Content must be at least 2 characters long</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-9">
+                        <button type="submit" class="btn btn-info" ng-disabled="editorForm.$invalid">Submit</button>
+                        <a href="/editor/list" class="btn btn-default">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div><!-- /.row -->
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container" ng-init="vm.find()">
+	<div class="row">
+        <div class="col-md-7 col-md-offset-3">
+            <h1>View Editor</h1>
+        </div>
+    </div>
+	<div class="row">
+	    <div class="col-md-7 col-md-offset-3">
+            <h2 class="editor-post-title">{{vm.editor._id}}</h2>
+            <a href="/editor/edit/{{vm.editor._id}}"><i class="fa fa-pencil-square-o"></i></a>
+            <a ng-click="vm.delete(vm.editor._id)"><i class="fa fa-trash"></i></a>
+            <p class="editor-post-meta">{{vm.editor.created |date:'medium'}} by {{vm.editor.user.firstName}} {{vm.editor.user.lastName}}</p>
+            <p>{{vm.editor.content}}</p>
+	    </div>
+	 </div>
+</div>

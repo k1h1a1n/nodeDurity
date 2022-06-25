@@ -1,0 +1,33 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 hello-header text-center">
+        <h1 class="hello-title">MeanStackJS Hellos</h1>
+        <p class="lead hello-description">Using the official example template of creating a hello module with Bootstrap.</p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block hello-main ">
+      <div ng-show="vm.hellos.length == 0">
+        <h3>No Hello Data Points</h3>
+        <a class="btn btn-primary" href="/hello/create">Create One Now</a>
+      </div>
+      
+      <div class="hello-post" ng-repeat="(key, value) in vm.hellos | orderBy:'-date'">
+        <a href="/hello/view/{{value._id}}"><h2 class="hello-post-title">{{value.title}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="/hello/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="hello-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.hello-post -->
+
+    </div><!-- /.hello-main -->
+
+  </div>
+    
+</div>

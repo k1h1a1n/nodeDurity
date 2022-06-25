@@ -1,0 +1,24 @@
+<div class="container be-detail-container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">          
+            <img src="https://cdn2.iconfinder.com/data/icons/luchesa-part-3/128/SMS-128.png" class="img-responsive" style="width:150px; height:150px;margin:0 auto;top:10px;"><br>
+            <h2 class="text-center">Verify your mobile number</h1>
+            <p class="lead"></p><p>An OTP has been sent to your Mobile Number. 
+                Please enter the 5 digit OTP below</p>  <p></p>
+             </br>           
+            <form name="otpForm" id="otp-form" method="POST" novalidate>             
+                   <div class="form-group" ng-class="{'has-warning': otpForm.phone.$invalid && otpForm.phone.$dirty, 'has-success': signupForm.phone.$valid && signupForm.phone.$dirty}">
+                   <input type="number" name="phone" id="phone" ng-model="vm.otpForm.phone" 
+                        placeholder="Enter your OTP number" class="form-control" required>
+                    <p class="help-block" id="error-email" ng-show="otpForm.phone.$error.phone">
+                        Must be a valid phone number</p>
+                </div>
+                <div class="form-group text-center">
+				  <input type="button" ng-disabled="otpForm.$invalid" class="btn btn-info" ng-click="sendOTP()" value="Verify"> 
+                      
+                </div>
+            </form>
+        <br><br>
+        </div>
+    </div>        
+</div>

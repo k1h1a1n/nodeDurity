@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="page-header">
+                <h3>Upload Your Documents</h3>
+            </div>
+        </div>
+    </div>
+
+   <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+             <form name="form">
+              Single Image with validations
+             <input type="file" class="button" ngf-select ng-model="file" name="file"></input>
+<!--
+           <input type="file" ngf-select ng-model="file" name="vm.upload.file" ngf-pattern="'image/*'"
+              accept="image/*"
+              ngf-max-size="20MB"
+              /> -->
+
+              Image thumbnail: <img style="width:100px;" ng-show="!!file" ngf-thumbnail="file || '/thumb.jpg'"/>
+                         <i ng-show="file.$error.required">*required</i><br>
+                         <i ng-show="file.$error.maxSize">File too large
+                         {{file.size / 1000000|number:1}}MB: max 20M</i>
+
+              <button type="submit" ng-click="vm.submit()">submit</button>
+            </form>
+        </div>
+    </div>
+
+  </div>

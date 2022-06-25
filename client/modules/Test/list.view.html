@@ -1,0 +1,33 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 Test-header text-center">
+        <h1 class="Test-title">MeanStackJS Tests</h1>
+        <p class="lead Test-description">Using the official example template of creating a Test module with Bootstrap.</p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block Test-main ">
+      <div ng-show="vm.Tests.length == 0">
+        <h3>No Test Data Points</h3>
+        <a class="btn btn-primary" href="/Test/create">Create One Now</a>
+      </div>
+      
+      <div class="Test-post" ng-repeat="(key, value) in vm.Tests | orderBy:'-date'">
+        <a href="/Test/view/{{value._id}}"><h2 class="Test-post-title">{{value.title}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="/Test/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="Test-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.Test-post -->
+
+    </div><!-- /.Test-main -->
+
+  </div>
+    
+</div>

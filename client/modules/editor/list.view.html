@@ -1,0 +1,32 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 editor-header text-center">
+        <h1 class="editor-title">Saved Texts</h1>
+        <p class="lead editor-description"></p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block editor-main ">
+      <div ng-show="vm.editors.length == 0">
+        <h3>No Editor Data Points</h3>
+        <a class="btn btn-primary" href="/editor/create">Create One Now</a>
+      </div>     
+      <div class="editor-post" ng-repeat="(key, value) in vm.editors | orderBy:'-date'">
+        <a href="/editor/view/{{value._id}}"><h2 class="editor-post-title">{{value._id}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">         
+          <a href="/editor/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="editor-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.editor-post -->
+
+    </div><!-- /.editor-main -->
+
+  </div>
+    
+</div>

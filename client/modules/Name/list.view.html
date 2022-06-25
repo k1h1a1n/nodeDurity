@@ -1,0 +1,33 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 Name-header text-center">
+        <h1 class="Name-title">MeanStackJS Names</h1>
+        <p class="lead Name-description">Using the official example template of creating a Name module with Bootstrap.</p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block Name-main ">
+      <div ng-show="vm.Names.length == 0">
+        <h3>No Name Data Points</h3>
+        <a class="btn btn-primary" href="/Name/create">Create One Now</a>
+      </div>
+      
+      <div class="Name-post" ng-repeat="(key, value) in vm.Names | orderBy:'-date'">
+        <a href="/Name/view/{{value._id}}"><h2 class="Name-post-title">{{value.title}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="/Name/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="Name-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.Name-post -->
+
+    </div><!-- /.Name-main -->
+
+  </div>
+    
+</div>

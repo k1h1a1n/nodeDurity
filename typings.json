@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "quill": "registry:dt/quill#1.1.0+20161025144844"
+  }
+}

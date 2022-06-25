@@ -1,0 +1,48 @@
+<div class="container" ng-init="vm.activateTokenCheck()" ng-controller="UserController" ng-app="app">
+    <div class="row">       
+            <div class="text-center">  
+                <h2 ng-if="resetTokenCheckStatus.data.valid==false">
+                   <i class="fa fa-thumbs-down" aria-hidden="true"></i> Failure</h2>     
+                    <h2 ng-if="resetTokenCheckStatus.data.valid==true">
+                   <i class="fa fa-thumbs-up" aria-hidden="true"></i> Success</h2>          
+                         
+            </div>       
+    </div>
+
+    <div class="row">                    
+            <div >
+                <article class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-10 " 
+                style="font-family: 'Maven Pro', sans-serif;">
+                <p class="h3" style="color:azure">{{resetTokenCheckStatus.data.message}}</p>                
+                </article>     
+            </div>       
+    </div>
+    <div class="row text-center" ng-app="app" ng-controller="UserController">        
+            <div ng-switch on="resetTokenCheckStatus.data.valid">
+            <div ng-switch-when="false">
+               <h4>Please  <a href="#" onclick="reSendVerificationMail()">click here </a>to resend verification mail again!.</h4>
+            </div>
+            <div ng-switch-default>
+                <h4><a href="home">Click here</a> to access your account!.</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // reSendVerificationMail = function() {
+        //   console.log("reSendVerificationMail")
+        // }
+    </script>
+
+</div>
+
+<style>
+body {
+  background: url('images/activate-bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>

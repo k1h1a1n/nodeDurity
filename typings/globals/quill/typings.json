@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/55f61799509836ce672e7763ecc249942b029275/quill/quill.d.ts",
+    "raw": "registry:dt/quill#1.1.0+20161025144844",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/55f61799509836ce672e7763ecc249942b029275/quill/quill.d.ts"
+  }
+}

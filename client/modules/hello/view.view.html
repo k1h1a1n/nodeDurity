@@ -1,0 +1,16 @@
+<div class="container" ng-init="vm.find()">
+	<div class="row">
+        <div class="col-md-7 col-md-offset-3">
+            <h1>View Hello</h1>
+        </div>
+    </div>
+	<div class="row">
+	    <div class="col-md-7 col-md-offset-3">
+            <h2 class="hello-post-title">{{vm.hello.title}}</h2>
+            <a href="/hello/edit/{{vm.hello._id}}"><i class="fa fa-pencil-square-o"></i></a>
+            <a ng-click="vm.delete(vm.hello._id)"><i class="fa fa-trash"></i></a>
+            <p class="hello-post-meta">{{vm.hello.created |date:'medium'}} by {{vm.hello.user.firstName}} {{vm.hello.user.lastName}}</p>
+            <p>{{vm.hello.content}}</p>
+	    </div>
+	 </div>
+</div>

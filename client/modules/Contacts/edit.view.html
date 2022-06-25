@@ -1,0 +1,142 @@
+<div class="container" ng-init="vm.find()">
+    <div class="center-block Contacts-post">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3">
+                <h1>Edit Contacts</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form name="ContactsForm" class="Contacts-edit form-horizontal" role="form" data-ng-submit="vm.update(ContactsForm.$valid)" novalidate>
+                <div class="form-group view"  ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">First Name</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.firstName" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Name is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Name must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Last Name</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.lastName" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Name is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Name must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view"  ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Gender</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.gender" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Title is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Name must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view"  ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">DOB</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.dob" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">DOB is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">DOB must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view"  ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">PrimaryEmail</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.primaryEmail" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">PrimaryEmail is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">PrimaryEmail must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">SecondaryEmail</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.secondaryEmail" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">SecondaryEmail is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">SecondaryEmail must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">AddressLine1</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.addressLine1" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">AddressLine1 is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">AddressLine1 must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">AddressLine2</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.addressLine2" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">AddressLine2 is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">AddressLine2 must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">City</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.city" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">City is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">City must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">State</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.state" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">State is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">State must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Country</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.country" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Country is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Country must be at least 2 characters long</p>
+                    </div>
+                </div>
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Zipcode</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.zipCode" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Zipcode is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Zipcode must be at least 2 characters long</p>
+                    </div>
+                </div>
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Relationship</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.relationship" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Relationship is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Relationship must be at least 2 characters long</p>
+                    </div>
+                </div>
+                <div class="form-group view" ng-class="{'has-warning': ContactsForm.title.$dirty && ContactsForm.title.$invalid, 'has-success': ContactsForm.title.$dirty && ContactsForm.title.$valid}">
+                    <label class="col-md-1 control-label">Role</label>
+                    <div class="col-md-9">
+                        <input name="title" type="text" class="form-control" data-ng-model="vm.Contacts.role" id="title" placeholder="Title" ng-minlength="2" required>
+                        <p ng-show="ContactsForm.title.$error.required && ContactsForm.title.$dirty" class="help-block">Role is required</p>
+                        <p ng-show="ContactsForm.title.$error.minlength" class="help-block">Role must be at least 2 characters long</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-9">
+                        <button type="submit" class="btn btn-info" ng-disabled="ContactsForm.$invalid">Submit</button>
+                        <a href="/Contacts/list" class="btn btn-default">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div><!-- /.row -->
+    </div>
+</div>

@@ -1,0 +1,46 @@
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  
+  <link rel='stylesheet prefetch' href='https://rawgit.com/angular/bower-material/master/angular-material.css'>
+  <style>
+      md-content > form {
+  padding-top:10px;
+  
+}
+
+form > *:last-child {
+  
+  margin-top:20px;
+  margin-bottom:10px;
+  
+}
+</style>
+	 <div>
+    <h1 class="md-title">Pick a vegetable below</h1>
+    <div layout="row">
+      <md-input-container>
+        <label>Vegetables</label>
+        <md-select ng-model="selectedVegetables"
+                   md-on-close="clearSearchTerm()"
+                   data-md-container-class="selectdemoSelectHeader"
+                   multiple>
+          <md-select-header class="demo-select-header">
+            <input ng-model="searchTerm"
+                   type="search"
+                   placeholder="Search for a vegetable.."
+                   class="demo-header-searchbox md-text">
+          </md-select-header>
+          <md-optgroup label="vegetables">
+            <md-option ng-value="vegetable" ng-repeat="vegetable in vegetables |
+              filter:searchTerm">{{vegetable}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+    </div>
+ </div>
+   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.min.js'></script>
+<script src='https://rawgit.com/angular/bower-material/master/angular-material.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>

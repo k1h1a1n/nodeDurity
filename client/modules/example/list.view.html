@@ -1,0 +1,33 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 example-header text-center">
+        <h1 class="example-title">MeanStackJS Examples</h1>
+        <p class="lead example-description">Using the official example template of creating a example module with Bootstrap.</p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block example-main ">
+      <div ng-show="vm.examples.length == 0">
+        <h3>No Example Data Points</h3>
+        <a class="btn btn-primary" href="/example/create">Create One Now</a>
+      </div>
+      
+      <div class="example-post" ng-repeat="(key, value) in vm.examples | orderBy:'-date'">
+        <a href="/example/view/{{value._id}}"><h2 class="example-post-title">{{value.title}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="/example/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="example-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.example-post -->
+
+    </div><!-- /.example-main -->
+
+  </div>
+    
+</div>

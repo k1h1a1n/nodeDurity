@@ -1,0 +1,145 @@
+<div class="container">
+             <link rel="stylesheet" href="test.css">
+
+    
+    <div class="center-block Contacts-post">
+
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3">
+                <h1>Create Contacts</h1>
+            </div>
+        </div>
+
+   <form name="ContactsForm" class="Contacts-edit form-horizontal" role="form" data-ng-submit="vm.create(ContactsForm.$valid)" novalidate>
+    <br>
+
+      <!-- firstName -->
+            <div>
+                <label class="desc contactlabel" id="title1" for="Field1">FirstName</label>
+                <div>
+                  <!-- <input id="Field1" name="Field1" type="text" class="field text fn" value="" size="8" tabindex="1"> -->
+                    <input type="text" name="firstName" class="field text fn" data-ng-model="vm.Contacts.firstName"
+                     id=firstName size="8" tabindex="1"><br>
+                </div>
+            </div>
+
+      <!-- lastName -->
+            <div>
+              <label class="desc contactlabel" for="lastName" id="lastName">LastName</label>
+              <div>
+                  <input type="text" name="lastName" class="filed text fn" data-ng-model="vm.Contacts.lastName"
+                   id=lastName size="8" tabindex="2"><br>
+              </div>
+            </div>
+
+      <!-- gender -->
+            <div>
+              <label class="desc contactlabel" for="gender" id="gender">Gender</label>
+              <div>
+                  <input type="text" name="gender" class="filed text fn" data-ng-model="vm.Contacts.gender"
+                   id=gender size="8" tabindex="3"><br>
+              </div>
+            </div>
+
+      <!-- dob -->
+            <div>
+              <label class="desc contactlabel" for="dob" id="dob">DOB</label>
+              <div>
+                  <input type="text" name="dob" class="filed text fn" data-ng-model="vm.Contacts.dob"
+                   id=dob size="8" tabindex="4"><br>
+              </div>
+            </div>
+
+      <!-- primaryEmail -->
+            <div>
+              <label class="desc contactlabel" for="primaryEmail" id="primaryEmail">PrimaryEmail</label>
+              <div>
+                  <input type="text" name="primaryEmail" class="filed text fn" data-ng-model="vm.Contacts.primaryEmail"
+                   id=primaryEmail size="8" tabindex="5"><br>
+              </div>
+            </div>
+
+      <!-- secondaryEmail -->
+            <div>
+              <label class="desc contactlabel" for="secondaryEmail" id="secondaryEmail">SecondaryEmail</label>
+              <div>
+                  <input type="text" name="secondaryEmail" class="filed text fn" data-ng-model="vm.Contacts.secondaryEmail"
+                   id=secondaryEmail size="8" tabindex="6"><br>
+              </div>
+            </div>
+      <!-- addressLine1 -->
+            <div>
+              <label class="desc contactlabel" for="addressLine1" id="addressLine1">AddressLine1</label>
+              <div>
+                  <input type="text" name="addressLine1" class="filed text fn" data-ng-model="vm.Contacts.addressLine1"
+                   id=addressLine1 size="8" tabindex="7"><br>
+              </div>
+            </div>
+      <!-- addressLine2 -->
+            <div>
+              <label class="desc contactlabel" for="addressLine2" id="addressLine2">AddressLine2</label>
+              <div>
+                  <input type="text" name="addressLine2" class="filed text fn" data-ng-model="vm.Contacts.addressLine2"
+                   id=addressLine2 size="8" tabindex="8"><br>
+              </div>
+            </div>
+    <!-- city -->
+          <div>
+            <label class="desc contactlabel" for="city" id="city">City</label>
+            <div>
+                <input type="text" name="city" class="filed text fn" data-ng-model="vm.Contacts.city"
+                 id=city size="8" tabindex="9"><br>
+            </div>
+          </div>
+  <!-- state -->
+        <div>
+          <label class="desc contactlabel" for="state" id="state">State</label>
+          <div>
+              <input type="text" name="state" class="filed text fn" data-ng-model="vm.Contacts.state"
+               id=state size="8" tabindex="10"><br>
+          </div>
+        </div>
+
+  <!-- country -->
+        <div>
+          <label class="desc contactlabel" for="country" id="country">Country</label>
+          <div>
+              <input type="text" name="state" class="filed text fn" data-ng-model="vm.Contacts.country"
+               id=country size="8" tabindex="11"><br>
+          </div>
+        </div>
+  <!-- zipCode -->
+        <div>
+          <label class="desc contactlabel" for="zipCode" id="zipCode">ZipCode</label>
+          <div>
+              <input type="text" name="zipCode" class="filed text fn" data-ng-model="vm.Contacts.zipCode"
+               id=zipCode size="8" tabindex="12"><br>
+          </div>
+        </div>
+  <!-- relationship -->
+        <div>
+          <label class="desc contactlabel" for="relationship" id="relationship">Relationship</label>
+          <div>
+              <input type="text" name="relationship" class="filed text fn" data-ng-model="vm.Contacts.relationship"
+               id=relationship size="8" tabindex="13"><br>
+          </div>
+        </div>
+  <!-- role -->
+        <div>
+          <label class="desc contactlabel" for="role" id="role">Role</label>
+          <div>
+              <input type="text" name="role" class="filed text fn" data-ng-model="vm.Contacts.role"
+               id=role size="8" tabindex="13"><br>
+          </div>
+        </div>
+   
+      <!-- Button create -->
+            <div class="text-center">
+               
+          <button name="submit " class="btn btn-secondary float-right"  type="submit" id="contact-submit" ng-click="reset()" tabindex="14">CREATE
+                
+            </div>
+      </button>
+  </form>
+    </div>
+</div>

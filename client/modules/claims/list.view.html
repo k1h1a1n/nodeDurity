@@ -1,0 +1,33 @@
+<div class="container" ng-init="vm.list()">
+  <div class="row">
+      <div class="col-sm-12 claims-header text-center">
+        <h1 class="claims-title">MeanStackJS Claimss</h1>
+        <p class="lead claims-description">Using the official example template of creating a claims module with Bootstrap.</p>
+      </div>
+  </div> 
+  <div class="row">
+    <div class="center-block claims-main ">
+      <div ng-show="vm.claimss.length == 0">
+        <h3>No Claims Data Points</h3>
+        <a class="btn btn-primary" href="/claims/create">Create One Now</a>
+      </div>
+      
+      <div class="claims-post" ng-repeat="(key, value) in vm.claimss | orderBy:'-date'">
+        <a href="/claims/view/{{value._id}}"><h2 class="claims-post-title">{{value.title}}</h2></a>
+        <span ng-show="vm.UserFactory.loggedin">
+          <a href="/claims/edit/{{value._id}}"><i class="fa fa-pencil-square-o"></i></a>
+          <a ng-click="vm.delete(value._id)"><i class="fa fa-trash"></i></a>
+        </span>
+        
+        <p class="claims-post-meta">
+          on {{value.created |date:'medium'}}
+        </p>
+        
+        <p>{{value.content}}</p>
+      </div><!-- /.claims-post -->
+
+    </div><!-- /.claims-main -->
+
+  </div>
+    
+</div>
